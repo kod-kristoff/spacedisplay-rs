@@ -2,7 +2,7 @@ use std::path::Path;
 
 use byte_unit::Byte;
 
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "android"))]
 pub use linux::*;
 #[cfg(target_os = "macos")]
 pub use macos::*;
@@ -11,7 +11,7 @@ pub use unix::*;
 #[cfg(windows)]
 pub use windows::*;
 
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "android"))]
 mod linux;
 #[cfg(target_os = "macos")]
 mod macos;

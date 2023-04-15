@@ -1,11 +1,11 @@
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "android"))]
 pub use linux::new_watcher;
 #[cfg(target_os = "macos")]
 pub use macos::new_watcher;
 #[cfg(target_os = "windows")]
 pub use windows::new_watcher;
 
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "android"))]
 mod linux;
 #[cfg(target_os = "macos")]
 mod macos;
